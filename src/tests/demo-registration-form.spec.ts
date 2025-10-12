@@ -74,20 +74,20 @@ test.describe('[DEMO REGISTER FORM]', () => {
     await confirmPasswordInput.fill(registrationData.password);
     await confirmButton.click();
 
-    await expect(registrationDetails).toHaveText('Registration Details');
-    await expect(fullNameDetails).toHaveText(`${registrationData.firstName} ${registrationData.lastName}`);
-    await expect(addressDetails).toHaveText(registrationData.address);
-    await expect(emailDetails).toHaveText(registrationData.email);
-    await expect(phoneDetails).toHaveText(registrationData.phone);
-    await expect(countryDetails).toHaveText(registrationData.country);
-    await expect(genderDetails).toHaveText(registrationData.sex);
-    await expect(languageDetails).toHaveText(registrationData.language);
-    await expect(skillsDetails).toHaveText(registrationData.skills.join(', '));
-    await expect(hobbiesDetails).toHaveText(registrationData.hobbies.join(', '));
-    await expect(dateOfBirthDetails).toHaveText(
+    await expect.soft(registrationDetails).toHaveText('Registration Details');
+    await expect.soft(fullNameDetails).toHaveText(`${registrationData.firstName} ${registrationData.lastName}`);
+    await expect.soft(addressDetails).toHaveText(registrationData.address);
+    await expect.soft(emailDetails).toHaveText(registrationData.email);
+    await expect.soft(phoneDetails).toHaveText(registrationData.phone);
+    await expect.soft(countryDetails).toHaveText(registrationData.country);
+    await expect.soft(genderDetails).toHaveText(registrationData.sex);
+    await expect.soft(languageDetails).toHaveText(registrationData.language);
+    await expect.soft(skillsDetails).toHaveText(registrationData.skills.join(', '));
+    await expect.soft(hobbiesDetails).toHaveText(registrationData.hobbies.join(', '));
+    await expect.soft(dateOfBirthDetails).toHaveText(
       `${registrationData.birthdayDay} ${registrationData.birthdayMonth} ${registrationData.birthdayYear}`,
     );
     const passwordLength = await passwordDetails.innerText();
-    await expect(passwordLength.length === registrationData.password.length).toBeTruthy();
+    await expect.soft(passwordLength.length === registrationData.password.length).toBeTruthy();
   });
 });
