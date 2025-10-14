@@ -84,9 +84,9 @@ test.describe('[DEMO REGISTER FORM]', () => {
     await expect.soft(languageDetails).toHaveText(registrationData.language);
     await expect.soft(skillsDetails).toHaveText(registrationData.skills.join(', '));
     await expect.soft(hobbiesDetails).toHaveText(registrationData.hobbies.join(', '));
-    await expect.soft(dateOfBirthDetails).toHaveText(
-      `${registrationData.birthdayDay} ${registrationData.birthdayMonth} ${registrationData.birthdayYear}`,
-    );
+    await expect
+      .soft(dateOfBirthDetails)
+      .toHaveText(`${registrationData.birthdayDay} ${registrationData.birthdayMonth} ${registrationData.birthdayYear}`);
     const passwordLength = await passwordDetails.innerText();
     await expect.soft(passwordLength.length === registrationData.password.length).toBeTruthy();
   });
