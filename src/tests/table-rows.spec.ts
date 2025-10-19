@@ -1,16 +1,14 @@
-/**
- * Создать функцию getTableRow(page, email), которая возвращает строку в таблице по емейлу.
-Например getTableRow(page, 'jsmith@gmail.com') => { "Last Name": "Smith", "First Name": "John", Email: "jsmith@gmail.com", Due: "$50.00", "Web Site": "http://www.jsmith.com" }
-
-Создайте тест, проверяющий данную функцию, используя все емейлы из таблицы Example 2
-
-Сайт: https://the-internet.herokuapp.com/tables
-*/
-
 import { expect, Page, test } from '@playwright/test';
 import { IUser, listOfUsers } from 'data/table-rows/table-rows.data';
 
 test.describe('[Heroku App] Table', () => {
+  /**
+   * Создать функцию getTableRow(page, email), которая возвращает строку в таблице по емейлу.
+    Например getTableRow(page, 'jsmith@gmail.com') => { "Last Name": "Smith", "First Name": "John", Email: "jsmith@gmail.com", Due: "$50.00", "Web Site": "http://www.jsmith.com" }
+    Создайте тест, проверяющий данную функцию, используя все емейлы из таблицы Example 2
+    Сайт: https://the-internet.herokuapp.com/tables
+  */
+
   const baseUrl = 'https://the-internet.herokuapp.com/tables';
 
   test.beforeEach(async ({ page }) => {
