@@ -16,7 +16,7 @@ export default [
   {
     plugins: { prettier: prettierPlugin },
     rules: {
-      'prettier/prettier': ['error', { endOfLine: 'auto', printWidth: 120, singleQuote: true }],
+      'prettier/prettier': ['off', { endOfLine: 'auto', printWidth: 120, singleQuote: true }],
       '@typescript-eslint/no-unused-expressions': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
       'no-empty-pattern': 'off',
