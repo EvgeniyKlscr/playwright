@@ -1,12 +1,8 @@
-import test, { expect } from '@playwright/test';
 import { credentials } from 'config/env';
 import { NOTIFICATIONS } from 'data/sales-portal/notifications';
 import { generateProductData } from 'data/sales-portal/products/generate-products';
+import { test, expect } from 'fixtures/page.fixture';
 import _ from 'lodash';
-import { HomePage } from 'ui/pages/home.page';
-import { AddNewProductPage } from 'ui/pages/products/add-new-products.page';
-import { ProductsListPage } from 'ui/pages/products/products-list.page';
-import { SignIn } from 'ui/pages/sign-in/sign-in.page';
 
 /**
  * Разработать е2е теста со следующими шагами:
@@ -18,12 +14,7 @@ import { SignIn } from 'ui/pages/sign-in/sign-in.page';
  */
 
 test.describe('[Sales Portal] [Products]', () => {
-  test('Add new product', async ({ page }) => {
-    const signInPage = new SignIn(page);
-    const homePage = new HomePage(page);
-    const productsListPage = new ProductsListPage(page);
-    const addNewProductPage = new AddNewProductPage(page);
-
+  test('Add new product', async ({ signInPage, homePage, productsListPage, addNewProductPage }) => {
     await signInPage.open();
     await signInPage.fillCredentials(credentials);
     await signInPage.clickOnLoginButton();
@@ -41,7 +32,7 @@ test.describe('[Sales Portal] [Products]', () => {
     await expect(productsListPage.tableRowByName(productData.name)).toBeVisible();
 
     const expectedResult = _.omit(productData, ['amount', 'notes']);
-    const getTableData = await productsListPage.getLastProductData(productData.name);
+    const getTableData = await productsListPage.getProductData(productData.name);
     const actualResult = _.omit(getTableData, ['createdOn']);
     expect(actualResult, '[ASSERT] Table data is correct').toEqual(expectedResult);
   });
