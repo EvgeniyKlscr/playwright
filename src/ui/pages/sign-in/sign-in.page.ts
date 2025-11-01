@@ -2,7 +2,7 @@ import { ICredentials } from 'data/types/credentials.types';
 import { BasePage } from '../base.page';
 import { SALES_PORTAL_URL } from 'config/env';
 
-export class SignIn extends BasePage {
+export class SignInPage extends BasePage {
   readonly emailInput = this.page.locator('#emailinput');
   readonly passwordInput = this.page.locator('#passwordinput');
   readonly loginButton = this.page.locator('.loginBtn');
