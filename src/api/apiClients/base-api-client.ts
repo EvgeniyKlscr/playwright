@@ -1,4 +1,4 @@
-import { IRequestOptions, IResponse } from 'data/types/core-types';
+import { IRequestOptions, IResponse } from 'data/types/core.types';
 import { IApiClient } from './types';
 
 export abstract class BaseApiClient implements IApiClient {

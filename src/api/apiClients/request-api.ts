@@ -1,5 +1,5 @@
 import { APIRequestContext, APIResponse } from '@playwright/test';
-import { IRequestOptions, IResponse } from 'data/types/core-types';
+import { IRequestOptions, IResponse } from 'data/types/core.types';
 import { BaseApiClient } from './base-api-client';
 import _ from 'lodash';
 

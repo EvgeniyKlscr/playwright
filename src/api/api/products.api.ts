@@ -1,6 +1,6 @@
 import { IApiClient } from 'api/apiClients/types';
 import { apiConfig } from 'config/api-config';
-import { IRequestOptions } from 'data/types/core-types';
+import { IRequestOptions } from 'data/types/core.types';
 import { IProduct, IProductResponse, IProductsResponse } from 'data/types/product.types';
 
 export class ProductsApi {

@@ -1,5 +1,5 @@
 import { MANUFACTURERS } from 'data/sales-portal/products/manufacturers';
-import { ID, IResponseFields, SortOrder } from './core-types';
+import { ID, IResponseFields, SortOrder } from './core.types';
 
 export interface IProduct {
   name: string;

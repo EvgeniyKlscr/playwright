@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test';
-import { IResponse, IResponseFields } from 'data/types/core-types';
+import { IResponse, IResponseFields } from 'data/types/core.types';
 import { validateJsonSchema } from './validate-schema.utils';
 
 export function validateResponse<T extends IResponseFields | null>(
