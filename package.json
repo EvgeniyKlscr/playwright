@@ -28,7 +28,9 @@
   "devDependencies": {
     "@eslint/js": "^9.37.0",
     "@playwright/test": "^1.55.1",
+    "@types/ajv": "^0.0.5",
     "@types/dotenv": "^6.1.1",
+    "@types/moment": "^2.11.29",
     "@types/node": "^24.6.2",
     "eslint": "^9.37.0",
     "eslint-config-prettier": "^10.1.8",
@@ -41,7 +43,10 @@
   },
   "dependencies": {
     "@faker-js/faker": "^9.9.0",
+    "@types/bson": "^4.0.5",
     "@types/lodash": "^4.17.20",
+    "ajv": "^8.17.1",
+    "bson": "^7.0.0",
     "dotenv": "^17.2.3",
     "lint-staged": "^16.2.4",
     "lodash": "^4.17.21"
