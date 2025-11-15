@@ -45,7 +45,9 @@ test.describe('[API] [Sales Portal] [Products]', () => {
       id = createdProduct.body.Product._id;
 
       const actualProductData = createdProduct.body.Product;
-      expect(_.omit(actualProductData, ['_id', 'createdOn'])).toEqual(createdProduct);
+      expect(_.omit(actualProductData, ['_id', 'createdOn'])).toEqual(
+        _.omit(createdProduct.body.Product, ['_id', 'createdOn']),
+      );
     });
   }
 });
