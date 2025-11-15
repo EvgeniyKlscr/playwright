@@ -32,6 +32,7 @@
     "@types/dotenv": "^6.1.1",
     "@types/moment": "^2.11.29",
     "@types/node": "^24.6.2",
+    "@types/numeral": "^2.0.5",
     "ajv-formats": "^3.0.1",
     "eslint": "^9.37.0",
     "eslint-config-prettier": "^10.1.8",
@@ -51,6 +52,7 @@
     "dotenv": "^17.2.3",
     "lint-staged": "^16.2.4",
     "lodash": "^4.17.21",
-    "moment": "^2.30.1"
+    "moment": "^2.30.1",
+    "numeral": "^2.0.6"
   }
 }
