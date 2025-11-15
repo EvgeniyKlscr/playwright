@@ -1,8 +1,10 @@
 import { expect } from '@playwright/test';
 import Ajv from 'ajv';
+import addFormats from 'ajv-formats';
 
 export function validateJsonSchema(body: object, schema: object) {
   const ajv = new Ajv();
+  addFormats(ajv);
   const validate = ajv.compile(schema);
 
   const isValid = validate(body);
