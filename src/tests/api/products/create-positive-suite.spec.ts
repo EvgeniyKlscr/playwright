@@ -34,8 +34,7 @@ test.describe('[API] [Sales Portal] [Products]', () => {
 
   for (const { testName, data } of dataForValidCases) {
     test(`Verify ${testName}`, async ({ productsApi }) => {
-      const productData = { ...generateProductData(), ...data };
-      const createdProduct = await productsApi.create({ ...productData, ...data }, token);
+      const createdProduct = await productsApi.create({ ...generateProductData(), ...data }, token);
       validateResponse(createdProduct, {
         status: STATUS_CODES.CREATED,
         schema: createProductSchema,
